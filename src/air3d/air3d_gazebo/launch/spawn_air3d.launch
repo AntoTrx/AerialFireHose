@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+    <include file="$(find qrotor_gazebo_plugin)/launch/spawn_sdf.launch">
+        <arg name="robot_name" value="air3d" />
+        <arg name="x" value="0.0" />
+        <arg name="y" value="0.0" />
+        <arg name="z" value="0.2" />
+        <arg name="roll" value="0"/>
+        <arg name="pitch" value="0"/>
+        <arg name="yaw" value="0.0" />
+        <arg name="sdf_robot_file" value="$(find air3d_gazebo)/models/air3d/model.sdf" />
+    </include>
+</launch>

@@ -1,0 +1,127 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+<model name="air3d">
+<static> 0 </static>
+<include>
+<uri>model://lumped_tether</uri>
+<pose>0.05	0.0	0.0	0.0	0.0	0.0	</pose>
+<name>lumped_tether</name>
+</include>
+
+<joint name='fixed_to_base' type='ball'>
+<parent>world</parent>
+<child>lumped_tether::link_0</child>
+<pose>-0.05	0.0	0.0	0.0	0.0	0.0	</pose>
+<axis>
+  <xyz>0 0 1</xyz>
+  <limit>
+    <lower>-1e8</lower>
+    <upper>1e8</upper>
+    <effort>-1</effort>
+    <velocity>-1</velocity>
+    <dissipation>1</dissipation>
+  </limit>
+  <dynamics>
+    <damping>0.01</damping>
+  </dynamics>
+  <use_parent_model_frame>1</use_parent_model_frame>
+</axis>
+<physics>
+  <ode>
+    <limit>
+      <cfm>0</cfm>
+      <erp>0.2</erp>
+    </limit>
+    <suspension>
+      <cfm>0</cfm>
+      <erp>0.2</erp>
+    </suspension>
+  </ode>
+</physics>
+</joint>
+<include>
+<uri>model://drone</uri>
+<pose>4`.0	0.0	0.03	0.0	0.0	0.0	</pose>
+<name>droneEndEffector</name>
+</include>
+<plugin filename="libqrotor_gazebo_plugin.so" name="qrotor_plugin_droneEndEffector">
+<linkName>droneEndEffector::base_link</linkName>
+<namespace>droneEndEffector</namespace>
+<updateRate>500.0</updateRate>
+</plugin>
+
+<joint name='drone_cable_joint_end_effector' type='ball'>
+<parent>droneEndEffector::base_link</parent>
+<child>lumped_tether::link_39</child>
+<pose>0.05	0.0	0.0	0.0	0.0	0.0	</pose>
+<axis>
+  <xyz>0 0 1</xyz>
+  <limit>
+    <lower>-1e8</lower>
+    <upper>1e8</upper>
+    <effort>-1</effort>
+    <velocity>-1</velocity>
+    <dissipation>1</dissipation>
+  </limit>
+  <dynamics>
+    <damping>0.01</damping>
+  </dynamics>
+  <use_parent_model_frame>1</use_parent_model_frame>
+</axis>
+<physics>
+  <ode>
+    <limit>
+      <cfm>0</cfm>
+      <erp>0.2</erp>
+    </limit>
+    <suspension>
+      <cfm>0</cfm>
+      <erp>0.2</erp>
+    </suspension>
+  </ode>
+</physics>
+</joint>
+<include>
+<uri>model://drone</uri>
+<pose>2.5	0.0	0.03	0.0	0.0	0.0	</pose>
+<name>droneIntermediate</name>
+</include>
+<plugin filename="libqrotor_gazebo_plugin.so" name="qrotor_plugin_droneIntermediate">
+<linkName>droneIntermediate::base_link</linkName>
+<namespace>droneIntermediate</namespace>
+<updateRate>500.0</updateRate>
+</plugin>
+
+<joint name='drone_cable_joint_intermediate' type='ball'>
+<parent>droneIntermediate::base_link</parent>
+<child>lumped_tether::link_24</child>
+<pose>0.05	0.0	0.0	0.0	0.0	0.0	</pose>
+<axis>
+  <xyz>0 0 1</xyz>
+  <limit>
+    <lower>-1e8</lower>
+    <upper>1e8</upper>
+    <effort>-1</effort>
+    <velocity>-1</velocity>
+    <dissipation>1</dissipation>
+  </limit>
+  <dynamics>
+    <damping>0.01</damping>
+  </dynamics>
+  <use_parent_model_frame>1</use_parent_model_frame>
+</axis>
+<physics>
+  <ode>
+    <limit>
+      <cfm>0</cfm>
+      <erp>0.2</erp>
+    </limit>
+    <suspension>
+      <cfm>0</cfm>
+      <erp>0.2</erp>
+    </suspension>
+  </ode>
+</physics>
+</joint>
+</model>
+</sdf>

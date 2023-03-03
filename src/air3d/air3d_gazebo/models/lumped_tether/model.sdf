@@ -1,0 +1,3332 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+<model name="lumped_tether">
+<static> 0 </static>
+<link name = "link_0" >
+<pose>0.0	0.0	0.0	0.0	0.0	0.0	</pose>
+
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>0.0001</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.0001</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.0001</izz>
+        </inertia>
+      </inertial>
+      <visual name='link_0_vis'>
+        <pose>0 0 0 0.0 1.57079 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.00125</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <shader type='pixel'/>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Yellow</name>
+          </script>
+        </material>
+        <transparency>0</transparency>
+        <cast_shadows>1</cast_shadows>
+      </visual>
+      <collision name='link_0_collision'>
+        <laser_retro>0</laser_retro>
+        <max_contacts>10</max_contacts>
+        <pose>0  0 0 0.0 1.57079 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.00125</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+    </link>
+<link name = "link_1" >
+<pose>0.1	0.0	0.0	0.0	0.0	0.0	</pose>
+
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>0.0001</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.0001</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.0001</izz>
+        </inertia>
+      </inertial>
+      <visual name='link_1_vis'>
+        <pose>0 0 0 0.0 1.57079 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.00125</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <shader type='pixel'/>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Yellow</name>
+          </script>
+        </material>
+        <transparency>0</transparency>
+        <cast_shadows>1</cast_shadows>
+      </visual>
+      <collision name='link_1_collision'>
+        <laser_retro>0</laser_retro>
+        <max_contacts>10</max_contacts>
+        <pose>0  0 0 0.0 1.57079 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.00125</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+    </link>
+<joint name='joint_0' type='universal'>
+<parent>link_0</parent>
+<child>link_1</child>
+<pose>-0.05	0.0	0.0	0.0	0.0	0.0	</pose>
+<axis>
+        <xyz>0 1 0</xyz>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.01</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <axis2>
+        <xyz>0 0 1</xyz>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.01</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis2>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <suspension>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </suspension>
+        </ode>
+      </physics>
+    </joint>
+<link name = "link_2" >
+<pose>0.2	0.0	0.0	0.0	0.0	0.0	</pose>
+
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>0.0001</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.0001</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.0001</izz>
+        </inertia>
+      </inertial>
+      <visual name='link_2_vis'>
+        <pose>0 0 0 0.0 1.57079 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.00125</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <shader type='pixel'/>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Yellow</name>
+          </script>
+        </material>
+        <transparency>0</transparency>
+        <cast_shadows>1</cast_shadows>
+      </visual>
+      <collision name='link_2_collision'>
+        <laser_retro>0</laser_retro>
+        <max_contacts>10</max_contacts>
+        <pose>0  0 0 0.0 1.57079 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.00125</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+    </link>
+<joint name='joint_1' type='universal'>
+<parent>link_1</parent>
+<child>link_2</child>
+<pose>-0.05	0.0	0.0	0.0	0.0	0.0	</pose>
+<axis>
+        <xyz>0 1 0</xyz>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.01</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <axis2>
+        <xyz>0 0 1</xyz>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.01</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis2>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <suspension>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </suspension>
+        </ode>
+      </physics>
+    </joint>
+<link name = "link_3" >
+<pose>0.30000000000000004	0.0	0.0	0.0	0.0	0.0	</pose>
+
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>0.0001</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.0001</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.0001</izz>
+        </inertia>
+      </inertial>
+      <visual name='link_3_vis'>
+        <pose>0 0 0 0.0 1.57079 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.00125</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <shader type='pixel'/>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Yellow</name>
+          </script>
+        </material>
+        <transparency>0</transparency>
+        <cast_shadows>1</cast_shadows>
+      </visual>
+      <collision name='link_3_collision'>
+        <laser_retro>0</laser_retro>
+        <max_contacts>10</max_contacts>
+        <pose>0  0 0 0.0 1.57079 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.00125</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+    </link>
+<joint name='joint_2' type='universal'>
+<parent>link_2</parent>
+<child>link_3</child>
+<pose>-0.05	0.0	0.0	0.0	0.0	0.0	</pose>
+<axis>
+        <xyz>0 1 0</xyz>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.01</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <axis2>
+        <xyz>0 0 1</xyz>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.01</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis2>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <suspension>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </suspension>
+        </ode>
+      </physics>
+    </joint>
+<link name = "link_4" >
+<pose>0.4	0.0	0.0	0.0	0.0	0.0	</pose>
+
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>0.0001</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.0001</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.0001</izz>
+        </inertia>
+      </inertial>
+      <visual name='link_4_vis'>
+        <pose>0 0 0 0.0 1.57079 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.00125</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <shader type='pixel'/>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Yellow</name>
+          </script>
+        </material>
+        <transparency>0</transparency>
+        <cast_shadows>1</cast_shadows>
+      </visual>
+      <collision name='link_4_collision'>
+        <laser_retro>0</laser_retro>
+        <max_contacts>10</max_contacts>
+        <pose>0  0 0 0.0 1.57079 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.00125</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+    </link>
+<joint name='joint_3' type='universal'>
+<parent>link_3</parent>
+<child>link_4</child>
+<pose>-0.05	0.0	0.0	0.0	0.0	0.0	</pose>
+<axis>
+        <xyz>0 1 0</xyz>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.01</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <axis2>
+        <xyz>0 0 1</xyz>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.01</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis2>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <suspension>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </suspension>
+        </ode>
+      </physics>
+    </joint>
+<link name = "link_5" >
+<pose>0.5	0.0	0.0	0.0	0.0	0.0	</pose>
+
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>0.0001</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.0001</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.0001</izz>
+        </inertia>
+      </inertial>
+      <visual name='link_5_vis'>
+        <pose>0 0 0 0.0 1.57079 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.00125</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <shader type='pixel'/>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Yellow</name>
+          </script>
+        </material>
+        <transparency>0</transparency>
+        <cast_shadows>1</cast_shadows>
+      </visual>
+      <collision name='link_5_collision'>
+        <laser_retro>0</laser_retro>
+        <max_contacts>10</max_contacts>
+        <pose>0  0 0 0.0 1.57079 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.00125</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+    </link>
+<joint name='joint_4' type='universal'>
+<parent>link_4</parent>
+<child>link_5</child>
+<pose>-0.05	0.0	0.0	0.0	0.0	0.0	</pose>
+<axis>
+        <xyz>0 1 0</xyz>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.01</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <axis2>
+        <xyz>0 0 1</xyz>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.01</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis2>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <suspension>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </suspension>
+        </ode>
+      </physics>
+    </joint>
+<link name = "link_6" >
+<pose>0.6000000000000001	0.0	0.0	0.0	0.0	0.0	</pose>
+
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>0.0001</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.0001</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.0001</izz>
+        </inertia>
+      </inertial>
+      <visual name='link_6_vis'>
+        <pose>0 0 0 0.0 1.57079 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.00125</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <shader type='pixel'/>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Yellow</name>
+          </script>
+        </material>
+        <transparency>0</transparency>
+        <cast_shadows>1</cast_shadows>
+      </visual>
+      <collision name='link_6_collision'>
+        <laser_retro>0</laser_retro>
+        <max_contacts>10</max_contacts>
+        <pose>0  0 0 0.0 1.57079 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.00125</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+    </link>
+<joint name='joint_5' type='universal'>
+<parent>link_5</parent>
+<child>link_6</child>
+<pose>-0.05	0.0	0.0	0.0	0.0	0.0	</pose>
+<axis>
+        <xyz>0 1 0</xyz>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.01</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <axis2>
+        <xyz>0 0 1</xyz>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.01</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis2>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <suspension>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </suspension>
+        </ode>
+      </physics>
+    </joint>
+<link name = "link_7" >
+<pose>0.7000000000000001	0.0	0.0	0.0	0.0	0.0	</pose>
+
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>0.0001</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.0001</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.0001</izz>
+        </inertia>
+      </inertial>
+      <visual name='link_7_vis'>
+        <pose>0 0 0 0.0 1.57079 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.00125</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <shader type='pixel'/>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Yellow</name>
+          </script>
+        </material>
+        <transparency>0</transparency>
+        <cast_shadows>1</cast_shadows>
+      </visual>
+      <collision name='link_7_collision'>
+        <laser_retro>0</laser_retro>
+        <max_contacts>10</max_contacts>
+        <pose>0  0 0 0.0 1.57079 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.00125</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+    </link>
+<joint name='joint_6' type='universal'>
+<parent>link_6</parent>
+<child>link_7</child>
+<pose>-0.05	0.0	0.0	0.0	0.0	0.0	</pose>
+<axis>
+        <xyz>0 1 0</xyz>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.01</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <axis2>
+        <xyz>0 0 1</xyz>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.01</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis2>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <suspension>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </suspension>
+        </ode>
+      </physics>
+    </joint>
+<link name = "link_8" >
+<pose>0.8	0.0	0.0	0.0	0.0	0.0	</pose>
+
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>0.0001</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.0001</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.0001</izz>
+        </inertia>
+      </inertial>
+      <visual name='link_8_vis'>
+        <pose>0 0 0 0.0 1.57079 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.00125</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <shader type='pixel'/>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Yellow</name>
+          </script>
+        </material>
+        <transparency>0</transparency>
+        <cast_shadows>1</cast_shadows>
+      </visual>
+      <collision name='link_8_collision'>
+        <laser_retro>0</laser_retro>
+        <max_contacts>10</max_contacts>
+        <pose>0  0 0 0.0 1.57079 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.00125</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+    </link>
+<joint name='joint_7' type='universal'>
+<parent>link_7</parent>
+<child>link_8</child>
+<pose>-0.05	0.0	0.0	0.0	0.0	0.0	</pose>
+<axis>
+        <xyz>0 1 0</xyz>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.01</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <axis2>
+        <xyz>0 0 1</xyz>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.01</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis2>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <suspension>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </suspension>
+        </ode>
+      </physics>
+    </joint>
+<link name = "link_9" >
+<pose>0.9	0.0	0.0	0.0	0.0	0.0	</pose>
+
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>0.0001</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.0001</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.0001</izz>
+        </inertia>
+      </inertial>
+      <visual name='link_9_vis'>
+        <pose>0 0 0 0.0 1.57079 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.00125</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <shader type='pixel'/>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Yellow</name>
+          </script>
+        </material>
+        <transparency>0</transparency>
+        <cast_shadows>1</cast_shadows>
+      </visual>
+      <collision name='link_9_collision'>
+        <laser_retro>0</laser_retro>
+        <max_contacts>10</max_contacts>
+        <pose>0  0 0 0.0 1.57079 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.00125</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+    </link>
+<joint name='joint_8' type='universal'>
+<parent>link_8</parent>
+<child>link_9</child>
+<pose>-0.05	0.0	0.0	0.0	0.0	0.0	</pose>
+<axis>
+        <xyz>0 1 0</xyz>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.01</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <axis2>
+        <xyz>0 0 1</xyz>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.01</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis2>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <suspension>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </suspension>
+        </ode>
+      </physics>
+    </joint>
+<link name = "link_10" >
+<pose>1.0	0.0	0.0	0.0	0.0	0.0	</pose>
+
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>0.0001</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.0001</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.0001</izz>
+        </inertia>
+      </inertial>
+      <visual name='link_10_vis'>
+        <pose>0 0 0 0.0 1.57079 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.00125</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <shader type='pixel'/>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Yellow</name>
+          </script>
+        </material>
+        <transparency>0</transparency>
+        <cast_shadows>1</cast_shadows>
+      </visual>
+      <collision name='link_10_collision'>
+        <laser_retro>0</laser_retro>
+        <max_contacts>10</max_contacts>
+        <pose>0  0 0 0.0 1.57079 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.00125</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+    </link>
+<joint name='joint_9' type='universal'>
+<parent>link_9</parent>
+<child>link_10</child>
+<pose>-0.05	0.0	0.0	0.0	0.0	0.0	</pose>
+<axis>
+        <xyz>0 1 0</xyz>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.01</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <axis2>
+        <xyz>0 0 1</xyz>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.01</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis2>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <suspension>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </suspension>
+        </ode>
+      </physics>
+    </joint>
+<link name = "link_11" >
+<pose>1.1	0.0	0.0	0.0	0.0	0.0	</pose>
+
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>0.0001</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.0001</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.0001</izz>
+        </inertia>
+      </inertial>
+      <visual name='link_11_vis'>
+        <pose>0 0 0 0.0 1.57079 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.00125</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <shader type='pixel'/>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Yellow</name>
+          </script>
+        </material>
+        <transparency>0</transparency>
+        <cast_shadows>1</cast_shadows>
+      </visual>
+      <collision name='link_11_collision'>
+        <laser_retro>0</laser_retro>
+        <max_contacts>10</max_contacts>
+        <pose>0  0 0 0.0 1.57079 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.00125</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+    </link>
+<joint name='joint_10' type='universal'>
+<parent>link_10</parent>
+<child>link_11</child>
+<pose>-0.05	0.0	0.0	0.0	0.0	0.0	</pose>
+<axis>
+        <xyz>0 1 0</xyz>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.01</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <axis2>
+        <xyz>0 0 1</xyz>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.01</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis2>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <suspension>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </suspension>
+        </ode>
+      </physics>
+    </joint>
+<link name = "link_12" >
+<pose>1.2000000000000002	0.0	0.0	0.0	0.0	0.0	</pose>
+
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>0.0001</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.0001</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.0001</izz>
+        </inertia>
+      </inertial>
+      <visual name='link_12_vis'>
+        <pose>0 0 0 0.0 1.57079 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.00125</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <shader type='pixel'/>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Yellow</name>
+          </script>
+        </material>
+        <transparency>0</transparency>
+        <cast_shadows>1</cast_shadows>
+      </visual>
+      <collision name='link_12_collision'>
+        <laser_retro>0</laser_retro>
+        <max_contacts>10</max_contacts>
+        <pose>0  0 0 0.0 1.57079 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.00125</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+    </link>
+<joint name='joint_11' type='universal'>
+<parent>link_11</parent>
+<child>link_12</child>
+<pose>-0.05	0.0	0.0	0.0	0.0	0.0	</pose>
+<axis>
+        <xyz>0 1 0</xyz>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.01</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <axis2>
+        <xyz>0 0 1</xyz>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.01</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis2>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <suspension>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </suspension>
+        </ode>
+      </physics>
+    </joint>
+<link name = "link_13" >
+<pose>1.3	0.0	0.0	0.0	0.0	0.0	</pose>
+
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>0.0001</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.0001</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.0001</izz>
+        </inertia>
+      </inertial>
+      <visual name='link_13_vis'>
+        <pose>0 0 0 0.0 1.57079 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.00125</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <shader type='pixel'/>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Yellow</name>
+          </script>
+        </material>
+        <transparency>0</transparency>
+        <cast_shadows>1</cast_shadows>
+      </visual>
+      <collision name='link_13_collision'>
+        <laser_retro>0</laser_retro>
+        <max_contacts>10</max_contacts>
+        <pose>0  0 0 0.0 1.57079 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.00125</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+    </link>
+<joint name='joint_12' type='universal'>
+<parent>link_12</parent>
+<child>link_13</child>
+<pose>-0.05	0.0	0.0	0.0	0.0	0.0	</pose>
+<axis>
+        <xyz>0 1 0</xyz>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.01</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <axis2>
+        <xyz>0 0 1</xyz>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.01</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis2>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <suspension>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </suspension>
+        </ode>
+      </physics>
+    </joint>
+<link name = "link_14" >
+<pose>1.4000000000000001	0.0	0.0	0.0	0.0	0.0	</pose>
+
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>0.0001</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.0001</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.0001</izz>
+        </inertia>
+      </inertial>
+      <visual name='link_14_vis'>
+        <pose>0 0 0 0.0 1.57079 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.00125</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <shader type='pixel'/>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Yellow</name>
+          </script>
+        </material>
+        <transparency>0</transparency>
+        <cast_shadows>1</cast_shadows>
+      </visual>
+      <collision name='link_14_collision'>
+        <laser_retro>0</laser_retro>
+        <max_contacts>10</max_contacts>
+        <pose>0  0 0 0.0 1.57079 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.00125</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+    </link>
+<joint name='joint_13' type='universal'>
+<parent>link_13</parent>
+<child>link_14</child>
+<pose>-0.05	0.0	0.0	0.0	0.0	0.0	</pose>
+<axis>
+        <xyz>0 1 0</xyz>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.01</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <axis2>
+        <xyz>0 0 1</xyz>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.01</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis2>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <suspension>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </suspension>
+        </ode>
+      </physics>
+    </joint>
+<link name = "link_15" >
+<pose>1.5	0.0	0.0	0.0	0.0	0.0	</pose>
+
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>0.0001</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.0001</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.0001</izz>
+        </inertia>
+      </inertial>
+      <visual name='link_15_vis'>
+        <pose>0 0 0 0.0 1.57079 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.00125</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <shader type='pixel'/>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Yellow</name>
+          </script>
+        </material>
+        <transparency>0</transparency>
+        <cast_shadows>1</cast_shadows>
+      </visual>
+      <collision name='link_15_collision'>
+        <laser_retro>0</laser_retro>
+        <max_contacts>10</max_contacts>
+        <pose>0  0 0 0.0 1.57079 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.00125</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+    </link>
+<joint name='joint_14' type='universal'>
+<parent>link_14</parent>
+<child>link_15</child>
+<pose>-0.05	0.0	0.0	0.0	0.0	0.0	</pose>
+<axis>
+        <xyz>0 1 0</xyz>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.01</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <axis2>
+        <xyz>0 0 1</xyz>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.01</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis2>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <suspension>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </suspension>
+        </ode>
+      </physics>
+    </joint>
+<link name = "link_16" >
+<pose>1.6	0.0	0.0	0.0	0.0	0.0	</pose>
+
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>0.0001</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.0001</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.0001</izz>
+        </inertia>
+      </inertial>
+      <visual name='link_16_vis'>
+        <pose>0 0 0 0.0 1.57079 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.00125</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <shader type='pixel'/>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Yellow</name>
+          </script>
+        </material>
+        <transparency>0</transparency>
+        <cast_shadows>1</cast_shadows>
+      </visual>
+      <collision name='link_16_collision'>
+        <laser_retro>0</laser_retro>
+        <max_contacts>10</max_contacts>
+        <pose>0  0 0 0.0 1.57079 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.00125</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+    </link>
+<joint name='joint_15' type='universal'>
+<parent>link_15</parent>
+<child>link_16</child>
+<pose>-0.05	0.0	0.0	0.0	0.0	0.0	</pose>
+<axis>
+        <xyz>0 1 0</xyz>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.01</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <axis2>
+        <xyz>0 0 1</xyz>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.01</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis2>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <suspension>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </suspension>
+        </ode>
+      </physics>
+    </joint>
+<link name = "link_17" >
+<pose>1.7000000000000002	0.0	0.0	0.0	0.0	0.0	</pose>
+
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>0.0001</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.0001</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.0001</izz>
+        </inertia>
+      </inertial>
+      <visual name='link_17_vis'>
+        <pose>0 0 0 0.0 1.57079 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.00125</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <shader type='pixel'/>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Yellow</name>
+          </script>
+        </material>
+        <transparency>0</transparency>
+        <cast_shadows>1</cast_shadows>
+      </visual>
+      <collision name='link_17_collision'>
+        <laser_retro>0</laser_retro>
+        <max_contacts>10</max_contacts>
+        <pose>0  0 0 0.0 1.57079 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.00125</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+    </link>
+<joint name='joint_16' type='universal'>
+<parent>link_16</parent>
+<child>link_17</child>
+<pose>-0.05	0.0	0.0	0.0	0.0	0.0	</pose>
+<axis>
+        <xyz>0 1 0</xyz>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.01</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <axis2>
+        <xyz>0 0 1</xyz>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.01</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis2>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <suspension>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </suspension>
+        </ode>
+      </physics>
+    </joint>
+<link name = "link_18" >
+<pose>1.8	0.0	0.0	0.0	0.0	0.0	</pose>
+
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>0.0001</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.0001</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.0001</izz>
+        </inertia>
+      </inertial>
+      <visual name='link_18_vis'>
+        <pose>0 0 0 0.0 1.57079 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.00125</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <shader type='pixel'/>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Yellow</name>
+          </script>
+        </material>
+        <transparency>0</transparency>
+        <cast_shadows>1</cast_shadows>
+      </visual>
+      <collision name='link_18_collision'>
+        <laser_retro>0</laser_retro>
+        <max_contacts>10</max_contacts>
+        <pose>0  0 0 0.0 1.57079 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.00125</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+    </link>
+<joint name='joint_17' type='universal'>
+<parent>link_17</parent>
+<child>link_18</child>
+<pose>-0.05	0.0	0.0	0.0	0.0	0.0	</pose>
+<axis>
+        <xyz>0 1 0</xyz>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.01</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <axis2>
+        <xyz>0 0 1</xyz>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.01</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis2>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <suspension>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </suspension>
+        </ode>
+      </physics>
+    </joint>
+<link name = "link_19" >
+<pose>1.9000000000000001	0.0	0.0	0.0	0.0	0.0	</pose>
+
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>0.0001</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.0001</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.0001</izz>
+        </inertia>
+      </inertial>
+      <visual name='link_19_vis'>
+        <pose>0 0 0 0.0 1.57079 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.00125</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <shader type='pixel'/>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Yellow</name>
+          </script>
+        </material>
+        <transparency>0</transparency>
+        <cast_shadows>1</cast_shadows>
+      </visual>
+      <collision name='link_19_collision'>
+        <laser_retro>0</laser_retro>
+        <max_contacts>10</max_contacts>
+        <pose>0  0 0 0.0 1.57079 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.00125</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+    </link>
+<joint name='joint_18' type='universal'>
+<parent>link_18</parent>
+<child>link_19</child>
+<pose>-0.05	0.0	0.0	0.0	0.0	0.0	</pose>
+<axis>
+        <xyz>0 1 0</xyz>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.01</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <axis2>
+        <xyz>0 0 1</xyz>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.01</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis2>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <suspension>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </suspension>
+        </ode>
+      </physics>
+    </joint>
+<link name = "link_20" >
+<pose>2.0	0.0	0.0	0.0	0.0	0.0	</pose>
+
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>0.0001</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.0001</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.0001</izz>
+        </inertia>
+      </inertial>
+      <visual name='link_20_vis'>
+        <pose>0 0 0 0.0 1.57079 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.00125</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <shader type='pixel'/>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Yellow</name>
+          </script>
+        </material>
+        <transparency>0</transparency>
+        <cast_shadows>1</cast_shadows>
+      </visual>
+      <collision name='link_20_collision'>
+        <laser_retro>0</laser_retro>
+        <max_contacts>10</max_contacts>
+        <pose>0  0 0 0.0 1.57079 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.00125</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+    </link>
+<joint name='joint_19' type='universal'>
+<parent>link_19</parent>
+<child>link_20</child>
+<pose>-0.05	0.0	0.0	0.0	0.0	0.0	</pose>
+<axis>
+        <xyz>0 1 0</xyz>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.01</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <axis2>
+        <xyz>0 0 1</xyz>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.01</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis2>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <suspension>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </suspension>
+        </ode>
+      </physics>
+    </joint>
+<link name = "link_21" >
+<pose>2.1	0.0	0.0	0.0	0.0	0.0	</pose>
+
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>0.0001</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.0001</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.0001</izz>
+        </inertia>
+      </inertial>
+      <visual name='link_21_vis'>
+        <pose>0 0 0 0.0 1.57079 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.00125</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <shader type='pixel'/>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Yellow</name>
+          </script>
+        </material>
+        <transparency>0</transparency>
+        <cast_shadows>1</cast_shadows>
+      </visual>
+      <collision name='link_21_collision'>
+        <laser_retro>0</laser_retro>
+        <max_contacts>10</max_contacts>
+        <pose>0  0 0 0.0 1.57079 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.00125</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+    </link>
+<joint name='joint_20' type='universal'>
+<parent>link_20</parent>
+<child>link_21</child>
+<pose>-0.05	0.0	0.0	0.0	0.0	0.0	</pose>
+<axis>
+        <xyz>0 1 0</xyz>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.01</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <axis2>
+        <xyz>0 0 1</xyz>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.01</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis2>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <suspension>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </suspension>
+        </ode>
+      </physics>
+    </joint>
+<link name = "link_22" >
+<pose>2.2	0.0	0.0	0.0	0.0	0.0	</pose>
+
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>0.0001</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.0001</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.0001</izz>
+        </inertia>
+      </inertial>
+      <visual name='link_22_vis'>
+        <pose>0 0 0 0.0 1.57079 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.00125</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <shader type='pixel'/>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Yellow</name>
+          </script>
+        </material>
+        <transparency>0</transparency>
+        <cast_shadows>1</cast_shadows>
+      </visual>
+      <collision name='link_22_collision'>
+        <laser_retro>0</laser_retro>
+        <max_contacts>10</max_contacts>
+        <pose>0  0 0 0.0 1.57079 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.00125</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+    </link>
+<joint name='joint_21' type='universal'>
+<parent>link_21</parent>
+<child>link_22</child>
+<pose>-0.05	0.0	0.0	0.0	0.0	0.0	</pose>
+<axis>
+        <xyz>0 1 0</xyz>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.01</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <axis2>
+        <xyz>0 0 1</xyz>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.01</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis2>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <suspension>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </suspension>
+        </ode>
+      </physics>
+    </joint>
+<link name = "link_23" >
+<pose>2.3000000000000003	0.0	0.0	0.0	0.0	0.0	</pose>
+
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>0.0001</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.0001</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.0001</izz>
+        </inertia>
+      </inertial>
+      <visual name='link_23_vis'>
+        <pose>0 0 0 0.0 1.57079 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.00125</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <shader type='pixel'/>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Yellow</name>
+          </script>
+        </material>
+        <transparency>0</transparency>
+        <cast_shadows>1</cast_shadows>
+      </visual>
+      <collision name='link_23_collision'>
+        <laser_retro>0</laser_retro>
+        <max_contacts>10</max_contacts>
+        <pose>0  0 0 0.0 1.57079 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.00125</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+    </link>
+<joint name='joint_22' type='universal'>
+<parent>link_22</parent>
+<child>link_23</child>
+<pose>-0.05	0.0	0.0	0.0	0.0	0.0	</pose>
+<axis>
+        <xyz>0 1 0</xyz>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.01</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <axis2>
+        <xyz>0 0 1</xyz>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.01</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis2>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <suspension>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </suspension>
+        </ode>
+      </physics>
+    </joint>
+<link name = "link_24" >
+<pose>2.4000000000000004	0.0	0.0	0.0	0.0	0.0	</pose>
+
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>0.0001</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.0001</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.0001</izz>
+        </inertia>
+      </inertial>
+      <visual name='link_24_vis'>
+        <pose>0 0 0 0.0 1.57079 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.00125</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <shader type='pixel'/>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Yellow</name>
+          </script>
+        </material>
+        <transparency>0</transparency>
+        <cast_shadows>1</cast_shadows>
+      </visual>
+      <collision name='link_24_collision'>
+        <laser_retro>0</laser_retro>
+        <max_contacts>10</max_contacts>
+        <pose>0  0 0 0.0 1.57079 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.00125</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+    </link>
+<joint name='joint_23' type='universal'>
+<parent>link_23</parent>
+<child>link_24</child>
+<pose>-0.05	0.0	0.0	0.0	0.0	0.0	</pose>
+<axis>
+        <xyz>0 1 0</xyz>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.01</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <axis2>
+        <xyz>0 0 1</xyz>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.01</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis2>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <suspension>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </suspension>
+        </ode>
+      </physics>
+    </joint>
+<link name = "link_25" >
+<pose>2.5	0.0	0.0	0.0	0.0	0.0	</pose>
+
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>0.0001</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.0001</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.0001</izz>
+        </inertia>
+      </inertial>
+      <visual name='link_25_vis'>
+        <pose>0 0 0 0.0 1.57079 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.00125</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <shader type='pixel'/>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Yellow</name>
+          </script>
+        </material>
+        <transparency>0</transparency>
+        <cast_shadows>1</cast_shadows>
+      </visual>
+      <collision name='link_25_collision'>
+        <laser_retro>0</laser_retro>
+        <max_contacts>10</max_contacts>
+        <pose>0  0 0 0.0 1.57079 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.00125</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+    </link>
+<joint name='joint_24' type='universal'>
+<parent>link_24</parent>
+<child>link_25</child>
+<pose>-0.05	0.0	0.0	0.0	0.0	0.0	</pose>
+<axis>
+        <xyz>0 1 0</xyz>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.01</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <axis2>
+        <xyz>0 0 1</xyz>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.01</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis2>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <suspension>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </suspension>
+        </ode>
+      </physics>
+    </joint>
+<link name = "link_26" >
+<pose>2.6	0.0	0.0	0.0	0.0	0.0	</pose>
+
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>0.0001</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.0001</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.0001</izz>
+        </inertia>
+      </inertial>
+      <visual name='link_26_vis'>
+        <pose>0 0 0 0.0 1.57079 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.00125</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <shader type='pixel'/>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Yellow</name>
+          </script>
+        </material>
+        <transparency>0</transparency>
+        <cast_shadows>1</cast_shadows>
+      </visual>
+      <collision name='link_26_collision'>
+        <laser_retro>0</laser_retro>
+        <max_contacts>10</max_contacts>
+        <pose>0  0 0 0.0 1.57079 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.00125</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+    </link>
+<joint name='joint_25' type='universal'>
+<parent>link_25</parent>
+<child>link_26</child>
+<pose>-0.05	0.0	0.0	0.0	0.0	0.0	</pose>
+<axis>
+        <xyz>0 1 0</xyz>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.01</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <axis2>
+        <xyz>0 0 1</xyz>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.01</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis2>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <suspension>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </suspension>
+        </ode>
+      </physics>
+    </joint>
+<link name = "link_27" >
+<pose>2.7	0.0	0.0	0.0	0.0	0.0	</pose>
+
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>0.0001</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.0001</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.0001</izz>
+        </inertia>
+      </inertial>
+      <visual name='link_27_vis'>
+        <pose>0 0 0 0.0 1.57079 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.00125</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <shader type='pixel'/>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Yellow</name>
+          </script>
+        </material>
+        <transparency>0</transparency>
+        <cast_shadows>1</cast_shadows>
+      </visual>
+      <collision name='link_27_collision'>
+        <laser_retro>0</laser_retro>
+        <max_contacts>10</max_contacts>
+        <pose>0  0 0 0.0 1.57079 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.00125</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+    </link>
+<joint name='joint_26' type='universal'>
+<parent>link_26</parent>
+<child>link_27</child>
+<pose>-0.05	0.0	0.0	0.0	0.0	0.0	</pose>
+<axis>
+        <xyz>0 1 0</xyz>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.01</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <axis2>
+        <xyz>0 0 1</xyz>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.01</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis2>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <suspension>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </suspension>
+        </ode>
+      </physics>
+    </joint>
+<link name = "link_28" >
+<pose>2.8000000000000003	0.0	0.0	0.0	0.0	0.0	</pose>
+
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>0.0001</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.0001</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.0001</izz>
+        </inertia>
+      </inertial>
+      <visual name='link_28_vis'>
+        <pose>0 0 0 0.0 1.57079 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.00125</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <shader type='pixel'/>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Yellow</name>
+          </script>
+        </material>
+        <transparency>0</transparency>
+        <cast_shadows>1</cast_shadows>
+      </visual>
+      <collision name='link_28_collision'>
+        <laser_retro>0</laser_retro>
+        <max_contacts>10</max_contacts>
+        <pose>0  0 0 0.0 1.57079 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.00125</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+    </link>
+<joint name='joint_27' type='universal'>
+<parent>link_27</parent>
+<child>link_28</child>
+<pose>-0.05	0.0	0.0	0.0	0.0	0.0	</pose>
+<axis>
+        <xyz>0 1 0</xyz>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.01</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <axis2>
+        <xyz>0 0 1</xyz>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.01</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis2>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <suspension>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </suspension>
+        </ode>
+      </physics>
+    </joint>
+<link name = "link_29" >
+<pose>2.9000000000000004	0.0	0.0	0.0	0.0	0.0	</pose>
+
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>0.0001</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.0001</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.0001</izz>
+        </inertia>
+      </inertial>
+      <visual name='link_29_vis'>
+        <pose>0 0 0 0.0 1.57079 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.00125</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <shader type='pixel'/>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Yellow</name>
+          </script>
+        </material>
+        <transparency>0</transparency>
+        <cast_shadows>1</cast_shadows>
+      </visual>
+      <collision name='link_29_collision'>
+        <laser_retro>0</laser_retro>
+        <max_contacts>10</max_contacts>
+        <pose>0  0 0 0.0 1.57079 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.00125</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+    </link>
+<joint name='joint_28' type='universal'>
+<parent>link_28</parent>
+<child>link_29</child>
+<pose>-0.05	0.0	0.0	0.0	0.0	0.0	</pose>
+<axis>
+        <xyz>0 1 0</xyz>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.01</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <axis2>
+        <xyz>0 0 1</xyz>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.01</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis2>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <suspension>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </suspension>
+        </ode>
+      </physics>
+    </joint>
+<link name = "link_30" >
+<pose>3.0	0.0	0.0	0.0	0.0	0.0	</pose>
+
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>0.0001</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.0001</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.0001</izz>
+        </inertia>
+      </inertial>
+      <visual name='link_30_vis'>
+        <pose>0 0 0 0.0 1.57079 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.00125</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <shader type='pixel'/>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Yellow</name>
+          </script>
+        </material>
+        <transparency>0</transparency>
+        <cast_shadows>1</cast_shadows>
+      </visual>
+      <collision name='link_30_collision'>
+        <laser_retro>0</laser_retro>
+        <max_contacts>10</max_contacts>
+        <pose>0  0 0 0.0 1.57079 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.00125</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+    </link>
+<joint name='joint_29' type='universal'>
+<parent>link_29</parent>
+<child>link_30</child>
+<pose>-0.05	0.0	0.0	0.0	0.0	0.0	</pose>
+<axis>
+        <xyz>0 1 0</xyz>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.01</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <axis2>
+        <xyz>0 0 1</xyz>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.01</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis2>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <suspension>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </suspension>
+        </ode>
+      </physics>
+    </joint>
+<link name = "link_31" >
+<pose>3.1	0.0	0.0	0.0	0.0	0.0	</pose>
+
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>0.0001</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.0001</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.0001</izz>
+        </inertia>
+      </inertial>
+      <visual name='link_31_vis'>
+        <pose>0 0 0 0.0 1.57079 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.00125</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <shader type='pixel'/>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Yellow</name>
+          </script>
+        </material>
+        <transparency>0</transparency>
+        <cast_shadows>1</cast_shadows>
+      </visual>
+      <collision name='link_31_collision'>
+        <laser_retro>0</laser_retro>
+        <max_contacts>10</max_contacts>
+        <pose>0  0 0 0.0 1.57079 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.00125</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+    </link>
+<joint name='joint_30' type='universal'>
+<parent>link_30</parent>
+<child>link_31</child>
+<pose>-0.05	0.0	0.0	0.0	0.0	0.0	</pose>
+<axis>
+        <xyz>0 1 0</xyz>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.01</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <axis2>
+        <xyz>0 0 1</xyz>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.01</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis2>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <suspension>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </suspension>
+        </ode>
+      </physics>
+    </joint>
+<link name = "link_32" >
+<pose>3.2	0.0	0.0	0.0	0.0	0.0	</pose>
+
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>0.0001</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.0001</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.0001</izz>
+        </inertia>
+      </inertial>
+      <visual name='link_32_vis'>
+        <pose>0 0 0 0.0 1.57079 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.00125</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <shader type='pixel'/>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Yellow</name>
+          </script>
+        </material>
+        <transparency>0</transparency>
+        <cast_shadows>1</cast_shadows>
+      </visual>
+      <collision name='link_32_collision'>
+        <laser_retro>0</laser_retro>
+        <max_contacts>10</max_contacts>
+        <pose>0  0 0 0.0 1.57079 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.00125</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+    </link>
+<joint name='joint_31' type='universal'>
+<parent>link_31</parent>
+<child>link_32</child>
+<pose>-0.05	0.0	0.0	0.0	0.0	0.0	</pose>
+<axis>
+        <xyz>0 1 0</xyz>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.01</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <axis2>
+        <xyz>0 0 1</xyz>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.01</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis2>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <suspension>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </suspension>
+        </ode>
+      </physics>
+    </joint>
+<link name = "link_33" >
+<pose>3.3000000000000003	0.0	0.0	0.0	0.0	0.0	</pose>
+
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>0.0001</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.0001</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.0001</izz>
+        </inertia>
+      </inertial>
+      <visual name='link_33_vis'>
+        <pose>0 0 0 0.0 1.57079 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.00125</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <shader type='pixel'/>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Yellow</name>
+          </script>
+        </material>
+        <transparency>0</transparency>
+        <cast_shadows>1</cast_shadows>
+      </visual>
+      <collision name='link_33_collision'>
+        <laser_retro>0</laser_retro>
+        <max_contacts>10</max_contacts>
+        <pose>0  0 0 0.0 1.57079 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.00125</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+    </link>
+<joint name='joint_32' type='universal'>
+<parent>link_32</parent>
+<child>link_33</child>
+<pose>-0.05	0.0	0.0	0.0	0.0	0.0	</pose>
+<axis>
+        <xyz>0 1 0</xyz>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.01</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <axis2>
+        <xyz>0 0 1</xyz>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.01</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis2>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <suspension>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </suspension>
+        </ode>
+      </physics>
+    </joint>
+<link name = "link_34" >
+<pose>3.4000000000000004	0.0	0.0	0.0	0.0	0.0	</pose>
+
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>0.0001</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.0001</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.0001</izz>
+        </inertia>
+      </inertial>
+      <visual name='link_34_vis'>
+        <pose>0 0 0 0.0 1.57079 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.00125</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <shader type='pixel'/>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Yellow</name>
+          </script>
+        </material>
+        <transparency>0</transparency>
+        <cast_shadows>1</cast_shadows>
+      </visual>
+      <collision name='link_34_collision'>
+        <laser_retro>0</laser_retro>
+        <max_contacts>10</max_contacts>
+        <pose>0  0 0 0.0 1.57079 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.00125</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+    </link>
+<joint name='joint_33' type='universal'>
+<parent>link_33</parent>
+<child>link_34</child>
+<pose>-0.05	0.0	0.0	0.0	0.0	0.0	</pose>
+<axis>
+        <xyz>0 1 0</xyz>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.01</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <axis2>
+        <xyz>0 0 1</xyz>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.01</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis2>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <suspension>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </suspension>
+        </ode>
+      </physics>
+    </joint>
+<link name = "link_35" >
+<pose>3.5	0.0	0.0	0.0	0.0	0.0	</pose>
+
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>0.0001</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.0001</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.0001</izz>
+        </inertia>
+      </inertial>
+      <visual name='link_35_vis'>
+        <pose>0 0 0 0.0 1.57079 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.00125</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <shader type='pixel'/>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Yellow</name>
+          </script>
+        </material>
+        <transparency>0</transparency>
+        <cast_shadows>1</cast_shadows>
+      </visual>
+      <collision name='link_35_collision'>
+        <laser_retro>0</laser_retro>
+        <max_contacts>10</max_contacts>
+        <pose>0  0 0 0.0 1.57079 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.00125</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+    </link>
+<joint name='joint_34' type='universal'>
+<parent>link_34</parent>
+<child>link_35</child>
+<pose>-0.05	0.0	0.0	0.0	0.0	0.0	</pose>
+<axis>
+        <xyz>0 1 0</xyz>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.01</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <axis2>
+        <xyz>0 0 1</xyz>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.01</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis2>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <suspension>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </suspension>
+        </ode>
+      </physics>
+    </joint>
+<link name = "link_36" >
+<pose>3.6	0.0	0.0	0.0	0.0	0.0	</pose>
+
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>0.0001</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.0001</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.0001</izz>
+        </inertia>
+      </inertial>
+      <visual name='link_36_vis'>
+        <pose>0 0 0 0.0 1.57079 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.00125</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <shader type='pixel'/>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Yellow</name>
+          </script>
+        </material>
+        <transparency>0</transparency>
+        <cast_shadows>1</cast_shadows>
+      </visual>
+      <collision name='link_36_collision'>
+        <laser_retro>0</laser_retro>
+        <max_contacts>10</max_contacts>
+        <pose>0  0 0 0.0 1.57079 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.00125</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+    </link>
+<joint name='joint_35' type='universal'>
+<parent>link_35</parent>
+<child>link_36</child>
+<pose>-0.05	0.0	0.0	0.0	0.0	0.0	</pose>
+<axis>
+        <xyz>0 1 0</xyz>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.01</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <axis2>
+        <xyz>0 0 1</xyz>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.01</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis2>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <suspension>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </suspension>
+        </ode>
+      </physics>
+    </joint>
+<link name = "link_37" >
+<pose>3.7	0.0	0.0	0.0	0.0	0.0	</pose>
+
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>0.0001</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.0001</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.0001</izz>
+        </inertia>
+      </inertial>
+      <visual name='link_37_vis'>
+        <pose>0 0 0 0.0 1.57079 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.00125</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <shader type='pixel'/>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Yellow</name>
+          </script>
+        </material>
+        <transparency>0</transparency>
+        <cast_shadows>1</cast_shadows>
+      </visual>
+      <collision name='link_37_collision'>
+        <laser_retro>0</laser_retro>
+        <max_contacts>10</max_contacts>
+        <pose>0  0 0 0.0 1.57079 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.00125</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+    </link>
+<joint name='joint_36' type='universal'>
+<parent>link_36</parent>
+<child>link_37</child>
+<pose>-0.05	0.0	0.0	0.0	0.0	0.0	</pose>
+<axis>
+        <xyz>0 1 0</xyz>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.01</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <axis2>
+        <xyz>0 0 1</xyz>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.01</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis2>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <suspension>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </suspension>
+        </ode>
+      </physics>
+    </joint>
+<link name = "link_38" >
+<pose>3.8000000000000003	0.0	0.0	0.0	0.0	0.0	</pose>
+
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>0.0001</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.0001</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.0001</izz>
+        </inertia>
+      </inertial>
+      <visual name='link_38_vis'>
+        <pose>0 0 0 0.0 1.57079 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.00125</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <shader type='pixel'/>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Yellow</name>
+          </script>
+        </material>
+        <transparency>0</transparency>
+        <cast_shadows>1</cast_shadows>
+      </visual>
+      <collision name='link_38_collision'>
+        <laser_retro>0</laser_retro>
+        <max_contacts>10</max_contacts>
+        <pose>0  0 0 0.0 1.57079 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.00125</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+    </link>
+<joint name='joint_37' type='universal'>
+<parent>link_37</parent>
+<child>link_38</child>
+<pose>-0.05	0.0	0.0	0.0	0.0	0.0	</pose>
+<axis>
+        <xyz>0 1 0</xyz>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.01</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <axis2>
+        <xyz>0 0 1</xyz>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.01</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis2>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <suspension>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </suspension>
+        </ode>
+      </physics>
+    </joint>
+<link name = "link_39" >
+<pose>3.9000000000000004	0.0	0.0	0.0	0.0	0.0	</pose>
+
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>0.0001</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.0001</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.0001</izz>
+        </inertia>
+      </inertial>
+      <visual name='link_39_vis'>
+        <pose>0 0 0 0.0 1.57079 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.00125</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <shader type='pixel'/>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Yellow</name>
+          </script>
+        </material>
+        <transparency>0</transparency>
+        <cast_shadows>1</cast_shadows>
+      </visual>
+      <collision name='link_39_collision'>
+        <laser_retro>0</laser_retro>
+        <max_contacts>10</max_contacts>
+        <pose>0  0 0 0.0 1.57079 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.00125</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+    </link>
+<joint name='joint_38' type='universal'>
+<parent>link_38</parent>
+<child>link_39</child>
+<pose>-0.05	0.0	0.0	0.0	0.0	0.0	</pose>
+<axis>
+        <xyz>0 1 0</xyz>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.01</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <axis2>
+        <xyz>0 0 1</xyz>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.01</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis2>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <suspension>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </suspension>
+        </ode>
+      </physics>
+    </joint>
+<link name = "link_40" >
+<pose>4.0000000000000004	0.0	0.0	0.0	0.0	0.0	</pose>
+
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>0.0001</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.0001</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.0001</izz>
+        </inertia>
+      </inertial>
+      <visual name='link_39_vis'>
+        <pose>0 0 0 0.0 1.57079 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.00125</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <shader type='pixel'/>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Yellow</name>
+          </script>
+        </material>
+        <transparency>0</transparency>
+        <cast_shadows>1</cast_shadows>
+      </visual>
+      <collision name='link_39_collision'>
+        <laser_retro>0</laser_retro>
+        <max_contacts>10</max_contacts>
+        <pose>0  0 0 0.0 1.57079 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.00125</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+    </link>
+<joint name='joint_40' type='universal'>
+<parent>link_39</parent>
+<child>link_40</child>
+<pose>-0.05	0.0	0.0	0.0	0.0	0.0	</pose>
+<axis>
+        <xyz>0 1 0</xyz>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.01</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <axis2>
+        <xyz>0 0 1</xyz>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.01</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis2>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <suspension>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </suspension>
+        </ode>
+      </physics>
+    </joint>
+<link name = "link_40" >
+<pose>4.0000000000000004	0.0	0.0	0.0	0.0	0.0	</pose>
+
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>0.0001</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.0001</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.0001</izz>
+        </inertia>
+      </inertial>
+      <visual name='link_39_vis'>
+        <pose>0 0 0 0.0 1.57079 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.00125</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <shader type='pixel'/>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Yellow</name>
+          </script>
+        </material>
+        <transparency>0</transparency>
+        <cast_shadows>1</cast_shadows>
+      </visual>
+      <collision name='link_39_collision'>
+        <laser_retro>0</laser_retro>
+        <max_contacts>10</max_contacts>
+        <pose>0  0 0 0.0 1.57079 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.00125</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+    </link>
+<joint name='joint_41' type='universal'>
+<parent>link_40</parent>
+<child>link_41</child>
+<pose>-0.05	0.0	0.0	0.0	0.0	0.0	</pose>
+<axis>
+        <xyz>0 1 0</xyz>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.01</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <axis2>
+        <xyz>0 0 1</xyz>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+          <damping>0.01</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis2>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <suspension>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </suspension>
+        </ode>
+      </physics>
+    </joint>
+    
+</model>
+</sdf>

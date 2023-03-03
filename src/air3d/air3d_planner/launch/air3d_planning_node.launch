@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+  <node pkg="air3d_planner" type="air3d_planning_node.py" name="air3d_planning_node" respawn="false" launch-prefix="" required="true" output="screen">
+    <remap from="/droneIntermediate/thrust_vector" to="/white_falcon/thrust_force" />
+    <remap from="/droneEndEffector/thrust_vector" to="/blue_falcon/thrust_force" />
+    <remap to="/white_falcon/odometry/mocap" from="/droneIntermediate/droneIntermediate/qrotor_plugin/odometry" />
+    <remap to="/blue_falcon/odometry/mocap" from="/droneEndEffector/droneEndEffector/qrotor_plugin/odometry" />
+  </node>
+</launch>

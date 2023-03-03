@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+<model name="multiple_drones">
+<static> 0 </static>
+<include>
+<uri>model://drone</uri>
+<pose>-2.2735384743313207	0.36376155696000817	0.0	0.0	0.0	0.0	</pose>
+<name>drone0</name>
+</include>
+<plugin filename="libqrotor_gazebo_plugin.so" name="qrotor_plugin_drone0">
+<linkName>drone0::base_link</linkName>
+<namespace>drone0</namespace>
+<updateRate>500.0</updateRate>
+</plugin>
+
+<include>
+<uri>model://drone</uri>
+<pose>-1.0076870891608054	2.023796306305307	0.0	0.0	0.0	0.0	</pose>
+<name>drone1</name>
+</include>
+<plugin filename="libqrotor_gazebo_plugin.so" name="qrotor_plugin_drone1">
+<linkName>drone1::base_link</linkName>
+<namespace>drone1</namespace>
+<updateRate>500.0</updateRate>
+</plugin>
+
+<include>
+<uri>model://drone</uri>
+<pose>-1.620521141094036	-0.7682281718355131	0.0	0.0	0.0	0.0	</pose>
+<name>drone2</name>
+</include>
+<plugin filename="libqrotor_gazebo_plugin.so" name="qrotor_plugin_drone2">
+<linkName>drone2::base_link</linkName>
+<namespace>drone2</namespace>
+<updateRate>500.0</updateRate>
+</plugin>
+
+</model>
+</sdf>
