@@ -1,8 +1,0 @@
-prefix=/home/vincent/catkin_ws2/devel
-
-Name: air3d_gazebo
-Description: Description of air3d_gazebo
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 
