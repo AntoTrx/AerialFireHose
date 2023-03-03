@@ -1,0 +1,8 @@
+prefix=/home/vincent/catkin_ws2/install
+
+Name: air3d_viz
+Description: Description of air3d_viz
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: geometry_msgs rospy std_msgs nav_msgs
