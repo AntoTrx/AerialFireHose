@@ -1,0 +1,13 @@
+\subsubsection usage Usage
+\verbatim
+<node name="air3d_planner" pkg="air3d_planner" type="air3d_planner">
+  <param name="radius" type="double" value="2.75" />
+  <param name="delta_radius" type="double" value="1.0" />
+  <param name="height" type="double" value="2.0" />
+  <param name="delta_height" type="double" value="0.0" />
+  <param name="angle" type="double" value="0.0" />
+  <param name="USE_CATENARY" type="bool" value="True" />
+  <param name="do_task" type="bool" value="False" />
+</node>
+\endverbatim
+
