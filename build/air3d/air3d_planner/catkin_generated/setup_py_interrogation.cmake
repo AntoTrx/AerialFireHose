@@ -1,7 +1,0 @@
-set(air3d_planner_SETUP_PY_SETUP_MODULE "distutils.core")
-set(air3d_planner_SETUP_PY_VERSION "0.0.0")
-set(air3d_planner_SETUP_PY_SCRIPTS "")
-set(air3d_planner_SETUP_PY_PACKAGES "air3d_planner")
-set(air3d_planner_SETUP_PY_PACKAGE_DIRS "src/air3d_planner")
-set(air3d_planner_SETUP_PY_MODULES "")
-set(air3d_planner_SETUP_PY_MODULE_DIRS "")

@@ -1,2 +1,0 @@
-set(air3d_planner_MESSAGE_FILES "/home/vincent/catkin_ws2/src/air3d/air3d_planner/msg/BoolStamped.msg;/home/vincent/catkin_ws2/src/air3d/air3d_planner/msg/ParamsStamped.msg")
-set(air3d_planner_SERVICE_FILES "")

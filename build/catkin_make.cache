@@ -1,2 +1,0 @@
-air3d/air3d_gazebo:air3d/air3d_planner:air3d/air3d_viz:air3d/qrotor_gazebo/qrotor_gazebo_plugin:air3d/qrotor_gazebo/qrotor_offboard
--DCATKIN_DEVEL_PREFIX=/home/vincent/catkin_ws2/devel -DCMAKE_INSTALL_PREFIX=/home/vincent/catkin_ws2/install -G Unix Makefiles
