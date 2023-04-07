@@ -6,8 +6,10 @@ from geometry_msgs.msg import Vector3, TwistStamped
 from nav_msgs.msg import Odometry
 import numpy as np
 import cvxpy as cvx
-from .controller_cbf import CBF_QP
-from .controller_cbf import PIDController
+import casadi as ca
+from .controllers import CBF_QP_OSQP
+from .controllers import CBF_QP_Casadi
+from .controllers import PIDController
 import air3d_planner.catenary_utils as cat
 
 
@@ -29,18 +31,9 @@ class QuadROSManagerE(object):
         odom_topic_name = "/"+name+"/"+name+"/qrotor_plugin/odometry"
         rospy.logwarn("Subscribing to "+odom_topic_name)
         self.odom_subscriber_ = rospy.Subscriber(odom_topic_name, Odometry, self.odom_callback)
-        #self._refI = None
-        self._controller = CBF_QP()
+        self._controller = CBF_QP_OSQP()
         self._controller2 = PIDController()
-
-    """
-    @property
-    def refI(self):
-        return self._refI    
-    #@refI.setter
-    def second_drone(self):
-    	self._refI = QuadROSManagerI.thrust
-    """    
+   
     def odom_callback(self, data):
         self._pos = np.array([data.pose.pose.position.x, data.pose.pose.position.y, data.pose.pose.position.z])  
         self._vel = np.array([data.twist.twist.linear.x, data.twist.twist.linear.y, data.twist.twist.linear.z])
@@ -85,8 +78,6 @@ class QuadROSManagerE(object):
         self.twist_publisher_.publish(msg)
       
     def run(self, setpoint, xj, vj, aj, vd=np.zeros(3), ad=np.zeros(3), cat_forces=np.zeros(3)):
-      # print(self._name, " ", setpoint)
-      
       self.thrust = self._controller.run(self.pos, self.vel, setpoint, xj, vj, aj, vd=vd, ad=ad, ff=cat_forces)
       
       self.send_cmd_as_plugin_command(self.thrust)
@@ -106,22 +97,8 @@ class QuadROSManagerI(object):
         odom_topic_name = "/"+name+"/"+name+"/qrotor_plugin/odometry"
         rospy.logwarn("Subscribing to "+odom_topic_name)
         self.odom_subscriber_ = rospy.Subscriber(odom_topic_name, Odometry, self.odom_callback)
-        #self._refE = None
         self._controllerPID = PIDController()
-    
-    """
-    @property
-    def get_pid_input(self):
-    	#return the current pid input
-    	return self._controllerPID.u
-    
-    @property
-    def refE(self):
-        return self._refE
-    @refE.setter
-    def second_drone(self, QuadROSManager_E):
-    	self._refE = QuadROSManager_E
-    """	    
+ 
     def odom_callback(self, data):
         self._pos = np.array([data.pose.pose.position.x, data.pose.pose.position.y, data.pose.pose.position.z])  
         self._vel = np.array([data.twist.twist.linear.x, data.twist.twist.linear.y, data.twist.twist.linear.z])
@@ -183,9 +160,6 @@ class Air3DManager_cbf(object):
       self.iname = iname
       self.i_quad = QuadROSManagerI(self.iname)
       
-      #self.e_quad.second_drone(self.i_quad)
-      #self.i_quad.second_drone(self.e_quad)
-
       self.setpoint_subscriber = rospy.Subscriber("/droneEndEffector/setpoint", Odometry, self.setpoint_callback)
       self._mission_ctrl = Server(MissionControlConfig, self.mission_ctrl_cb, namespace="mission_control")
       self._flag_pub = rospy.Publisher("/mission_control/flag", BoolStamped, queue_size=10)
@@ -260,7 +234,7 @@ class Air3DManager_cbf(object):
 
       e_sp = np.array([r*np.cos(self.e_th)+l*np.cos(self.e_th+self.e_dth), r*np.sin(self.e_th)+l*np.sin(self.e_th+self.e_dth), h])
       i_sp = np.array([r*np.cos(self.e_th), r*np.sin(self.e_th), h])
-      self._controller = CBF_QP()
+      self._controller = CBF_QP_OSQP()
       self._K1 = self._controller.compute_barrier_constraints.k1
       self._K2 = self._controller.compute_barrier_constraints.k2
       msg = ParamsStamped()
@@ -280,7 +254,7 @@ class Air3DManager_cbf(object):
       e_sp = np.array([ir*np.cos(self.e_th) + self.e_dr*np.cos(self.e_th+self.e_dth) , ir*np.sin(self.e_th) + self.e_dr*np.sin(self.e_th+self.e_dth), self.e_h])
       i_sp = np.array([ir*np.cos(self.e_th), ir*np.sin(self.e_th), self.e_h+self.e_dh])
       
-      self._controller = CBF_QP()
+      self._controller = CBF_QP_OSQP()
       self._K1 = self._controller.k1
       self._K2 = self._controller.k2
       if self.do_task:
